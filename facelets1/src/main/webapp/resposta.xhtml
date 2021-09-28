@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html
+    lang="es"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <h:outputStylesheet library="css" name="estils.css" />
+        <title>
+            <h:outputText value ="#{mis.titol}"/>
+        </title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:graphicImage library="imatges" name="wave.med.gif" alt="Movent la ma"/>
+        
+        <h2>
+            <h:outputText id="result" value="#{numeroUsuari.resposta}" />
+        </h2>
+        <h:commandButton id="back" value="#{mis.torna}" action="salutacio"/>
+        </h:form>
+    </h:body>
+</html>
