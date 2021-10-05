@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <!-- INTERFACE -->
+    <cc:interface>         
+        <cc:attribute name="tipus"/>         
+        <cc:attribute name="bean" required="true"/>     
+    </cc:interface>     
+    <!-- IMPLEMENTATION -->     
+    <cc:implementation>         
+        <h:panelGrid columns="2">             
+            <f:facet name="header">               
+                <h:outputText value="Adreça??????"/>             
+            </f:facet>             
+            <h:outputLabel for="adr1" value="Adreça 1"/>             
+            <h:inputText id="adr1" value="????????"/>             
+            <h:outputLabel for="adr2" value=" Adreça 2"/>             
+            <h:inputText id="adr2"                          value="???????"/>             
+            <h:outputLabel for="ciutat" value="Ciutat"/>             
+            <h:inputText id="ciutat" value="????????"/>             
+            <h:outputLabel for="pais" value="Pais"/>             
+            <h:inputText id="pais" value="????????" size="2" maxlength="2"/>             
+            <h:outputLabel for="cp" value="Cp"/>             
+            <h:inputText id="cp" value="???????"size="5" maxlength="5"/>         
+        </h:panelGrid>     
+    </cc:implementation> 
+</html>
