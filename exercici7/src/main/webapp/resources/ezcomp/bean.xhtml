@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <!-- INTERFACE -->
+    <cc:interface>
+        <cc:attribute name="tipus"/>
+        <cc:attribute name="bean" required="true"/> 
+    </cc:interface>
+
+    <!-- IMPLEMENTATION -->
+    <cc:implementation>
+        <h:panelGrid columns="2">
+            <f:facet name="header">               
+                <h:outputText value="Login page"/>             
+            </f:facet> 
+            <h:outputLabel for="name" value="Nom usuari:"/>             
+            <h:inputText id="name" value="#{cc.attrs.bean.username}"/>
+            <h:outputLabel for="pass" value="Contrasenya:"/>
+            <h:inputSecret id="pass" value="#{cc.attrs.bean.password}" />
+            <h:commandButton action="#{cc.attrs.bean.login}" value="Entra"/> 
+        </h:panelGrid>
+           
+    </cc:implementation>
+</html>
