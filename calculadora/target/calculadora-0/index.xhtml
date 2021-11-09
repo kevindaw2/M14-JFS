@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h1>Calculadora</h1>
+            <h:form>
+                <h:outputLabel value="Primer número" for="numero1" />
+                <h:inputText value="" id="numero1" /> 
+                <br></br>
+                <h:outputLabel value="Segon número" for="numero2" />
+                <h:inputText value="" id="numero2" />
+                <br></br>
+                <h:outputText value="Operació: "/>
+                <br></br>
+                <h:outputText value="Resultat: "/>
+                <br></br>
+                <h:commandButton value="Calcular" />
+                <br></br>
+                <h:selectOneListbox value="">
+                    <f:selectItem itemValue="+" itemLabel="suma" />
+                    <f:selectItem itemValue="-" itemLabel="resta" />
+                    <f:selectItem itemValue="*" itemLabel="multiplicació" />
+                    <f:selectItem itemValue="/" itemLabel="divisió" />
+                </h:selectOneListbox>  
+                <h:commandButton value="Selecciona operació"/>
+            </h:form>
+            <br></br>
+        </f:view>
+    </h:body>
+</html>
