@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h2>Selector d'idiomes</h2>
+        <h:form id="form-idiomes" style="background-color: #0099cc">
+            <h:outputLabel value='Selecciona idioma '/>
+            <h:selectOneMenu value="#{idiomes.idioma}" onchange="submit()" valueChangeListener="#{idiomes.canviIdioma}">
+                <f:selectItems value='#{idiomes.data}' />
+            </h:selectOneMenu><br></br>
+            <h:outputText value='#{idiomes.idioma}'/><br></br>
+            <h:commandButton value="canvia color" type="submit" />
+        </h:form>
+    </h:body>
+</html>
