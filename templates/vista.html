@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vista Template</title>
+</head>
+<body>
+    <h1>Plantilla Django</h1>
+
+    {% include 'menu.html' %}
+
+    {% if persona.nombre == 'Kevin' %}
+        <h2>Es alumno</h2>
+    {% endif %}
+
+    {% for item in ciudades %} 
+        {{forloop.counter}} -{{item}}
+    {% endfor %}
+
+   
+</body>
+</html> 
