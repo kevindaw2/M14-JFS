@@ -1,5 +1,6 @@
 package com.mycompany.conversors;
 
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
@@ -27,7 +28,8 @@ public class TelefonConverter implements Converter {
             telefon.append(value);
         }
 
-        char g = value.charAt(2); // devuelve el guion
+    
+          char g = value.charAt(2); // devuelve el guion
         String guio = Character.toString(g);
 
         if ("-".equals(guio)) { //comparar el tercer valor con un guion
@@ -36,16 +38,40 @@ public class TelefonConverter implements Converter {
             FacesMessage msg = new FacesMessage("Sense format correcte", "El número de telèfon ha de ternir el format: 'pp- nnn nn nn'. És dificil eh?");
             throw new ConverterException(msg);
         }
-
+ 
         //el prefix del telefon ha de tenir dos numeros
-        //ha de contar si son numeros 
-      
-        String str = "^\\s?((\\[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?\\s?";
 
-        if (Pattern.compile(str).matcher(value).matches()) {
-            System.out.println("yes");
+        Pattern pattern = Pattern.compile("/\\(?([0-9]{2})\\)?([ .-]?)([0-9]{3})\\2([0-9]{4})/");
+        Matcher matcher = pattern.matcher(value); 
+        
+        if(matcher.matches()){
+            telefon.append(value); 
         } else {
-            System.out.println("no");
+            FacesMessage msg = new FacesMessage("Sense format correcte", "El número de telèfon ha de ternir 2 pp");
+            throw new ConverterException(msg);
+        }
+  
+        //compta si son 7 numeros
+        Pattern pat = Pattern.compile("^\\d{7}$");
+        Matcher mat = pat.matcher(value); 
+ 
+        if(mat.matches()){
+            telefon.append(value);
+        } else {
+            FacesMessage msg = new FacesMessage("Sense format correcte", "El número de telèfon ha de ternir 7 numeros");
+            throw new ConverterException(msg);
+        }
+        
+        //accepta numes numeros 
+        
+        Pattern patt = Pattern.compile("^[0-9]*$");
+        Matcher mattch = patt.matcher(value); 
+        
+        if(mattch.matches()){
+            telefon.append(value); 
+        } else {
+            FacesMessage msg = new FacesMessage("Sense format correcte", "Només s'admeten números!");
+            throw new ConverterException(msg);
         }
 
         Telefon tel = new Telefon(telefon.toString());
