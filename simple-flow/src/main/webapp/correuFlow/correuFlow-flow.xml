@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow-return id="goToIndex">
+    <from-outcome>/index</from-outcome>
+</flow-return>
+
+<flow-return id="finalitza">
+    <from-outcome>/fet</from-outcome>
+</flow-return>
