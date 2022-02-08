@@ -12,14 +12,14 @@
         </h:outputLabel>
         <h:outputLabel>Estat del flux: #{null != facesContext.application.flowHandler.currentFlow}</h:outputLabel> 
         <h:outputLabel> - Id del Flux: #{facesContext.application.flowHandler.currentFlow.id}</h:outputLabel>
-        <h:form style="width: 50%;background-color:  #74cbfa">
+        <h:form style="width: 50%;background-color:  silver">
             <h:panelGrid id = "panel" columns = "1" border = "0"
                          cellpadding = "10" cellspacing = "1">
-                <h:outputText value = "Has comprat #{compraBean.cantitatLlibre} lllibres per un cost de #{compraBean.costTotal}" />
+                <h:outputText value = "Has comprat 3 llibres per un cost de 101.25$" />
                 <h:outputText value = "Marca Compra per enviar la teva comanda i entrar en el flux de compra." />
-                <h:commandButton id = "enviarCompra" value = "Compra" action="comprasFlow.xhtml" />
+                <h:commandButton value = "Compra" action="compraFlow"/>
                 <h:outputText value = "Marca Correu per entrar a la llista de correu i entrar al flux de correu." />
-                <h:commandButton id = "enviarCorreu" value = "Correu" />
+                <h:commandButton value = "Correu" action="correuFlow" />
             </h:panelGrid>
         </h:form>
     </body>

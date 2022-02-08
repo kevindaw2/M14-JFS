@@ -16,7 +16,11 @@ import javax.faces.flow.FlowScoped;
 @Named
 @FlowScoped("correuFlowBean")
 public class correuFlowBean implements Serializable {
-
+    
+    public String getRetorna() {
+        return "/index";
+    }
+    
     /**
      * Creates a new instance of correuFlowBean
      */

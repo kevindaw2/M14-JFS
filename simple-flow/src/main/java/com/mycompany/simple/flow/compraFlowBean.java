@@ -5,14 +5,9 @@
  */
 package com.mycompany.simple.flow;
 
-import java.io.Serializable;
-import javax.faces.flow.Flow;
 import javax.inject.Named;
+import java.io.Serializable;
 import javax.faces.flow.FlowScoped;
-import javax.faces.flow.builder.FlowBuilder;
-import javax.faces.flow.builder.FlowBuilderParameter;
-import javax.faces.flow.builder.FlowDefinition;
-import javax.ws.rs.Produces;
 
 /**
  *
@@ -24,34 +19,11 @@ public class compraFlowBean implements Serializable {
 
     private String nom, adreca, adreca2, pais, ciutat;
 
-    @Produces
-    @FlowDefinition
-
-    public Flow defineFlow(@FlowBuilderParameter FlowBuilder flowBuilder) {
-        String flowId = "compraFlow";
-
-        flowBuilder.id("", flowId);
-        flowBuilder.viewNode(flowId, "/" + flowId + "/" + flowId + "/" + ".xhtml").markAsStartNode();
-        flowBuilder.returnNode("retorna").fromOutcome("#{compraFlow.retorna}");
-        flowBuilder.inboundParameter("param1Compra", "#{flowScope.param1}");
-        flowBuilder.inboundParameter("param2Compra", "#{flowScope.param2}");
-        flowBuilder.flowCallNode("cridacorreu").flowReference("", "correuFlow").outboundParameter("param1Compra", "#{compraFlowBean.nom}").outboundParameter("param2Compra", "#{compraFlowBean.ciutat}");
-
-        return flowBuilder.getFlow();
+    public compraFlowBean() {
     }
 
     public String getRetorna() {
-        return "/index.xhtml";
-    }
-
-    public String cridaCorreu() {
-        return "/correuFlow.xhtml";
-    }
-
-    /**
-     * Creates a new instance of compraFlow
-     */
-    public compraFlowBean() {
+        return "/index";
     }
 
     public String getNom() {

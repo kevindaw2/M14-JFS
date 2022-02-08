@@ -17,26 +17,28 @@ import java.io.Serializable;
 @SessionScoped
 public class compraBean implements Serializable {
     
-    private int cantitatLlibre; 
-    private double costTotal; 
+    private int llibres;
+    private double preuTotal;
 
-    public compraBean() {
+    public compraBean() {}
+
+    public int getLlibres() {
+        return llibres;
     }
 
-    public int getCantitatLlibre() {
-        return cantitatLlibre;
+    public void setLlibres(int llibres) {
+        this.llibres = llibres;
     }
 
-    public void setCantitatLlibre(int cantitatLlibre) {
-        this.cantitatLlibre = cantitatLlibre;
+    public double getPreuTotal() {
+        return preuTotal;
     }
 
-    public double getCostTotal() {
-        return costTotal;
+    public void setPreuTotal(double preuTotal) {
+        this.preuTotal = preuTotal;
     }
-
-    public void setCostTotal(double costTotal) {
-        this.costTotal = costTotal;
+    
+     public String getRetorna() {
+        return "/index";
     }
-       
 }
