@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+        <title>Pàgina de compra</title>
+    </head>
+
+    <body style="font-family: sans-serif">
+        <h:outputLabel>
+            <h2>Pàgina 1 de compra</h2>
+        </h:outputLabel>
+        <h:outputLabel>Estat del flux: #{null != facesContext.application.flowHandler.currentFlow}</h:outputLabel> 
+        <h:outputLabel> - Id del Flux: #{facesContext.application.flowHandler.currentFlow.id}</h:outputLabel>
+        <h:form style="width: 50%;background-color:  silver">
+            <h:panelGrid id = "panel" columns = "1" border = "0"
+                         cellpadding = "10" cellspacing = "1">
+                <h:outputText value="Has comprat #{compraBean.llibres} llibres al cost de: #{compraBean.preuTotal}" />
+                <h:outputText value = "Marca Compra per enviar la teva comanda i entrar en el flux de compra." />
+                <h:commandButton value = "Compra" action="compraFlow"/>
+                <h:outputText value = "Marca Correu per entrar a la llista de correu i entrar al flux de correu." />
+                <h:commandButton value = "Correu" action="correuFlow" />
+            </h:panelGrid>
+        </h:form>
+    </body>
+</html>
