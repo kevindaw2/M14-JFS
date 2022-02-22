@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view locale="#{languageController.locale}">
+            <h:graphicImage name="images/saluda.jpg" /><br></br>
+            <h:form>
+                <h:commandButton action="#{languageController.change('ca-CA')}"  value="Default"/>
+                <h:commandButton action="#{languageController.change('fr-FR')}"  value="French"/>
+                <h:commandButton action="#{languageController.change('de-DE')}"  value="German"/>
+                <h:panelGrid id="panel" columns="2" border="0"
+                             cellpadding="0" cellspacing="10"> 
+                </h:panelGrid>
+            </h:form>
+            <h3>
+                <h:outputText value="#{content['message']}"></h:outputText>
+            </h3>
+        </f:view>
+    </h:body>
+</html>
